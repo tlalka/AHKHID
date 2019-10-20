@@ -199,6 +199,10 @@ InputMsg(wParam, lParam) {
         GuiControl,, lbxInput, % ""
         . " Vendor ID: "   AHKHID_GetDevInfo(h, DI_HID_VENDORID,     True)
         . " Product ID: "  AHKHID_GetDevInfo(h, DI_HID_PRODUCTID,    True)
+        . " Flags: "       AHKHID_GetInputInfo(lParam, II_MSE_FLAGS) 
+        . " ButtonFlags: " AHKHID_GetInputInfo(lParam, II_MSE_BUTTONFLAGS) 
+        . " ButtonData: "  AHKHID_GetInputInfo(lParam, II_MSE_BUTTONDATA) 
+        . " RawButtons: "  AHKHID_GetInputInfo(lParam, II_MSE_RAWBUTTONS) 
         . " UsPg/Us: " AHKHID_GetDevInfo(h, DI_HID_USAGEPAGE, True) . "/" . AHKHID_GetDevInfo(h, DI_HID_USAGE, True)
         . " Data: " Bin2Hex(&uData, r)
     }
